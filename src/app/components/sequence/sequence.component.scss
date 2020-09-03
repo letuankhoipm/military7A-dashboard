@@ -1,0 +1,25 @@
+@import "src/assets/scss/_app-variables.scss";
+@import "src/assets/scss/_breakpoints.scss";
+.sequence-container {
+    background: -webkit-gradient(linear, left top, right top, from(#008080), to(#248256));
+}
+
+.sequence-bg {
+    background: url("/assets/images/cover_bg_1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sequence-content {
+    width: 100%;
+    .content {
+        @include lg {
+            transform: translateX(-100px);
+        }
+    }
+
+    .icon {
+        font-size: 35px;
+    }
+}

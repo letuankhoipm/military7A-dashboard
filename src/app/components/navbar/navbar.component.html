@@ -1,0 +1,72 @@
+<div class="navbar-header-top d-none d-lg-block nav-header">
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-lg-3 my-auto py-2">
+        <p class="mb-0 text-center">
+          <i class="fas fa-star text-danger mr-2"></i>
+          <span class="text-primary font-weight-bold text-uppercase">bệnh viện quân y 7a</span>
+        </p>
+      </div>
+      <div class="col-lg-5 my-auto py-2 text-right">
+        <form>
+          <input placeholder="Nhập để tìm kiếm..." class="form-control" type="text">
+          <i style="right: 25px; top: 20px" class="fas fa-search position-absolute text-primary cursor-pointer"></i>
+        </form>
+      </div>
+      <div class="col-lg-4 my-auto py-2 text-right">
+
+        <p class="mb-2"><i class="fas fa-phone pr-2 text-primary"></i>{{ info.phone }}</p>
+        <p class="mb-0"><i class="fas fa-map-marker pr-2 text-primary"></i>{{ info.address }}</p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="navbar-pure-css d-none d-lg-block" [class.fixed-nav]="isFixed">
+  <div class="logo h-100">
+    <img [routerLink]="['/']" [class.hidden]="isFixed" class="logo-7a position-relative py-2 cursor-pointer"
+      [src]="logo" alt="logo">
+  </div>
+  <nav [ngClass]="currentShow">
+    <ul class="h-100">
+      <li [routerLink]="['/']" class="list">
+        <a class="nav-list text-uppercase">trang chủ</a>
+      </li>
+      <li [routerLink]="['/statistics']" routerLinkActive="active" class="list">
+        <a class="nav-list text-uppercase">thống kê</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div class="ltk-navbar-mobile d-block d-lg-none">
+  <div class="navbar navbar-mb pt-2 w-100 position-fixed" [class.scrolled]="scrolled" [class.awake]="awake">
+    <div class="row w-100">
+      <div [class.icon-flow]="stretching" class="col-10 p-0 non-flow">
+        <a class="navbar-brand ml-3" [routerLink]="['/']">
+          <img class="w-25 w-lg-75" [src]="logoMobile" alt="logo">
+        </a>
+      </div>
+      <div (click)="showMobileNav()" [class.icon-flow]="stretching" class="col-2 p-0 non-flow text-right">
+        <i [class.icon-hidden]="stretching" style="font-size: 30px;" class="fas fa-bars pt-3"></i>
+        <i [class.icon-hidden]="!stretching" style="font-size: 30px;" class="fas fa-times pt-3"></i>
+      </div>
+      <div [class.on-stretch]="stretching" class="col-12 position-fixed non-stretch">
+        <ul class="navbar-list-mb list-group ml-auto mt-2 mt-lg-0 mr-4 pr-4 text-right text-uppercase">
+          <li class="nav-item">
+            <a (click)="hiddenMobileNav()" class="nav-link" [routerLink]="['/']">
+              TRANG CHỦ
+            </a>
+          </li>
+          <li class="nav-item">
+            <a (click)="hiddenMobileNav()" class="nav-link" [routerLink]="['/statistics']">
+              THỐNG KÊ
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

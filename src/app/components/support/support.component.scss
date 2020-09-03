@@ -1,0 +1,82 @@
+@import "src/assets/scss/_app-variables.scss";
+
+.support {
+    .support-title {
+        border-right: 5px solid $primary;
+    }
+
+    .card {
+        &:hover {
+            .spt-img,
+            .spt-skew {
+                width: 99% !important;
+                transition-duration: 0.5s;
+            }
+
+            .spt-skew {
+                transition-duration: 0.5s;
+                background: rgba(0, 0, 0, 0.7);
+            }
+
+            .spt-content {
+                padding: 5% 10% 0 20%;
+                opacity: 1;
+            }
+
+            .spt-header {
+                i {
+                    color: white !important;
+                    transition-duration: 0.5s;
+                }
+            }
+        }
+    }
+
+    .spt-header {
+        z-index: 10;
+
+        i {
+            transition-duration: 0.5s;
+        }
+    }
+
+    .spt-skew {
+        width: 60%;
+        background: rgba(0, 0, 0, 0.2);
+        transition-duration: 0.5s;
+        z-index: 8;
+    }
+
+    .spt-img {
+        width: 60%;
+        transition-duration: 0.5s;
+        top: -20px;
+        right: -20px;
+        z-index: 2;
+    }
+
+    .spt-content {
+        opacity: 0;
+        transition-duration: 0.5s;
+    }
+
+    .medical {
+        background: url("assets/images/med1.jpg");
+    }
+
+    .phone {
+        background: url("assets/images/med2.jpg");
+    }
+
+    .qr {
+        background: url("assets/images/med5.jpg");
+    }
+
+    .messenger {
+        background: url("assets/images/med4.jpg");
+    }
+
+    .facebook {
+        background: url("assets/images/med3.jpg");
+    }
+}

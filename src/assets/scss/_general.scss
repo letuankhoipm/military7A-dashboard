@@ -1,0 +1,44 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.material-shadow {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.material-title {
+    border-left: 5px solid $primary !important;
+}
+
+label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.form-group {
+    i {
+        position: absolute;
+        top: 40px;
+        right: 25px;
+    }
+}
+
+input {
+    font-size: 13px !important;
+    &::placeholder {
+        font-size: 13px !important;
+    }
+}
+
+input[type=radio],
+input[type=checkbox] {
+    position: relative;
+    top: 2px;
+}
+
+.sticky-flex {
+    position: sticky !important;
+    align-self: flex-start;
+    top: 70px;
+  }
+  

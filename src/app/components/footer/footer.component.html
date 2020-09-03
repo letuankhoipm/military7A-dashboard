@@ -1,0 +1,53 @@
+<div class="footer-container pt-5">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="row">
+          <div class="col-12 col-sm-6">
+            <img class="w-75" src="assets/images/logo.png" alt="logo">
+          </div>
+          <div class="col-12 col-sm-6">
+            <h5>Hợp tác trong nước</h5>
+            <ul class="pl-0">
+              <li *ngFor="let link of listLink" class="mb-3 text-primary">
+                <a [href]="link.link" target="_blank">{{link.name}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="row">
+          <div class="col-12 col-sm-6">
+            <h5>Đường dẫn hữu ích</h5>
+            <ul class="pl-0">
+              <li *ngFor="let link of linkUseful" class="mb-3">
+                <a [href]="link.link" target="_blank">{{link.name}}</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-sm-6">
+            <h5>
+              Thông tin liên lạc
+            </h5>
+            <p><i class="fas fa-map-marker pr-2 text-primary"></i>466 Nguyễn Trãi, P.8, Q.5, TPHCM</p>
+            <p><i class="fas fa-phone pr-2 text-primary"></i>028 38366789</p>
+            <p><i class="fas fa-envelope pr-2 text-primary"></i>tocskhbv7a@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-container container-fluid">
+    <div class="row">
+      <div class="col-6 text-center">
+        <p class="mb-0" style="line-height: 2.3;">
+          Copyright © 2020, <span class="font-weight-bold">GoCodee Team Ltd, Co</span>
+        </p>
+      </div>
+      <div class="col-6 text-center">
+        <a class="social-icon py-2 px-2" *ngFor="let link of linkContact" [href]="link.link" target="_blank" [innerHTML]="link.icon"></a>
+      </div>
+    </div>
+  </div>
+</div>

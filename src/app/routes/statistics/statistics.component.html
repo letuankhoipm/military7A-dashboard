@@ -1,0 +1,55 @@
+ <app-header [title]="title" [desc]="desc"></app-header>
+ <div class="container p-4">
+   <div class="row">
+     <div class="col-6">
+       <div class="pie-chart card p-4">
+         <label class="text-uppercase" for="pie-chart">Lượt khám bệnh</label>
+         <app-pie-chart *ngIf="examsTurnLabel" [legendAlign]="'center'" [listLabels]="examsTurnLabel" [data]="examsTurnData"></app-pie-chart>
+       </div>
+     </div>
+     <div class="col-6">
+       <div class="pie-chart card p-4">
+         <label class="text-uppercase" for="pie-chart">kết quả khám bệnh lâm sàng</label>
+         <app-pie-chart *ngIf="examsResultLabel" [listLabels]="examsResultLabel" [data]="examsResultData"></app-pie-chart>
+       </div>
+     </div>
+     <div class="col-12 mt-4">
+       <div class="stacked-chart card p-4">
+        <label class="text-uppercase" for="pie-chart">thống kê chi tiết tình hình các phòng khám</label>
+        <app-stacked-chart></app-stacked-chart>
+       </div>
+     </div>
+     <div class="col-12 mt-4">
+       <div class="bar-chart card p-4">
+        <label class="text-uppercase" for="pie-chart">thống kê khám nội trú</label>
+        <app-bar-chart></app-bar-chart>
+       </div>
+     </div>
+    
+     <div class="col-12 mt-4">
+      <div class="line-chart card p-4">
+        <label class="text-uppercase" for="pie-chart">thống kê doanh thu theo nhóm</label>
+        <app-column-chart></app-column-chart>
+       </div>
+     </div>
+     <div class="col-6 mt-4">
+      <div class="pie-chart card p-4">
+        <label class="text-uppercase" for="pie-chart">kết quả cận lâm sàng</label>
+        <app-pie-chart *ngIf="examsResultLabel" [listLabels]="examsResultLabel" [data]="examsResultData"></app-pie-chart>
+      </div>
+    </div>
+     <div class="col-6 mt-4">
+      <div class="line-chart card p-4 h-100">
+        <label class="text-uppercase" for="pie-chart">thống kê viện phí thu tiền mặt</label>
+        <app-gato-chart></app-gato-chart>
+       </div>
+     </div>
+
+     <div class="col-12 mt-4">
+      <div class="line-chart card p-4">
+       <label class="text-uppercase" for="pie-chart">thống kê doanh thu cận lâm sàng</label>
+       <app-line-chart></app-line-chart>
+      </div>
+    </div>
+   </div>
+ </div>

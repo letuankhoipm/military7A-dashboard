@@ -1,0 +1,67 @@
+<div class="about-us-container container">
+  <div class="row">
+    <div class="col-lg-6 about-us-content d-flex justify-content-center order-2 order-lg-1">
+      <div class="content">
+        <h4>BỆNH VIỆN QUÂN Y 7A</h4>
+        <p class="text-justify">
+          Thực hiện chủ trương của Trung ương Cục, ngay sau ngày giải phóng, cùng với các đơn vị của Bộ Quốc phòng, lực
+          lượng vũ trang Quân khu 7 đã tiếp quản toàn bộ các căn cứ quân sự của địch trên địa bàn miền Đông Nam Bộ. Theo
+          phân công nhiệm vụ, ngành Quân y có nhiệm vụ tổ chức lực lượng tiếp quản tất cả các cơ sở quân y của quân đội
+          Việt Nam Cộng hòa. Ngày 20/5/1976, theo quyết định của Quân khu, Bệnh viện C2 và Bệnh viện K21 chính thức sáp nhập thành
+          Viện Quân y 7A
+        </p>
+        <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-1" [closeOthers]="true">
+          <ngb-panel id="custom-panel-1">
+            <ng-template ngbPanelHeader let-opened="opened">
+              <div class="d-flex align-items-center">
+                <button ngbPanelToggle class="btn px-3 w-100 text-left">
+                  <i class="fas fa-long-arrow-alt-down px-2"></i>Sứ mạng</button>
+              </div>
+            </ng-template>
+            <ng-template ngbPanelContent>
+              <div class="row">
+                <div class="col-lg-12">
+                  <p>Mang đến cho quân nhân nói riêng, nhân dân nói chung một dịch vụ y tế công cộng tốt nhất Việt Nam.
+                    Cơ sở hậu cần vững chắc cho quân khu 7 trong thời chiến cũng như thời bình.</p>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel>
+            <ng-template ngbPanelHeader>
+              <div class="d-flex align-items-center">
+                <button ngbPanelToggle class="btn px-3 w-100 text-left">
+                  <i class="fas fa-long-arrow-alt-down px-2"></i>Tầm nhìn</button>
+              </div>
+            </ng-template>
+            <ng-template ngbPanelContent>
+              <p>
+                Hướng đến việc trở thành cơ sở y tế hậu cần quân đội lớn nhất và tốt nhất tại miền Đông Nam Bộ
+              </p>
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel>
+            <ng-template ngbPanelHeader>
+              <div class="d-flex align-items-center">
+                <button ngbPanelToggle class="btn px-3 w-100 text-left">
+                  <i class="fas fa-long-arrow-alt-down px-2"></i>Nguyên tắc làm việc</button>
+              </div>
+            </ng-template>
+            <ng-template ngbPanelContent>
+              <div class="row">
+               <ul>
+                   <li>Giỏi Y thuật</li>
+                   <li>Tốt Y đức</li>
+                   <li>Vì nước vong thân, vì dân phục vụ</li>
+               </ul>
+              </div>
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+      </div>
+    </div>
+    <div class="col-lg-6 about-us-bg order-1 order-lg-2">
+      <!-- <img src="assets/images/about.png" alt="" class="w-100"> -->
+    </div>
+  </div>
+</div>

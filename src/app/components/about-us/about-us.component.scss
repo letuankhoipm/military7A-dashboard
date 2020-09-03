@@ -1,0 +1,56 @@
+@import "src/assets/scss/_app-variables.scss";
+
+.about-us-container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    .content {
+        margin-top: 100px;
+    }
+}
+
+.about-us-bg {
+    background: url('assets/images/about.png') no-repeat;
+    background-size: cover;
+}
+
+::ng-deep .accordion {
+    .card {
+        margin: 10px 0;
+        border: unset;
+        border-bottom: unset;
+        border-radius: unset;
+    }
+    .card-header {
+        padding: 0;
+        background-color: unset;
+    }
+
+    .btn {
+        box-shadow: none;
+        padding: 15px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 0;
+        background-color: $primary;
+        color: $white;
+        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out,
+            box-shadow 0.3s ease-in-out;
+        i {
+            transition: transform 0.3s ease-in-out;
+        }
+    }
+    .btn:not(.collapsed) {
+        i {
+            transform: rotateZ(180deg);
+        }
+    }
+    .collapsed {
+        background-color: $white;
+        color: $dark-black;
+    }
+
+    .card-body {
+        margin: 5px 0;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        transition: all 0.5s ease-in-out;
+    }
+}
