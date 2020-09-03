@@ -5,6 +5,7 @@ import {
   ApexResponsive,
   ApexChart
 } from "ng-apexcharts";
+import { DashboardService } from '@services/dashboard.service';
 export type ChartOptions = {
   series: ApexNonAxisChartSeries;
   chart: ApexChart;
@@ -19,7 +20,7 @@ export type ChartOptions = {
 export class GatoChartComponent implements OnInit {
   @ViewChild("gato-chart") chart: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
-  constructor() {
+  constructor(private dashboardService: DashboardService) {
     this.chartOptions = {
       series: [44, 55, 13, 43, 22],
       chart: {
@@ -44,6 +45,10 @@ export class GatoChartComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.dashboardService.getCashflow().subscribe((res) => {
+      this.chartOptions.series = res.map(x => x.value);
+      this.chartOptions.labels = res.map(x => x.key);
+    })
   }
 
 }

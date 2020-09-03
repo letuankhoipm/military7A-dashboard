@@ -72,11 +72,7 @@ export class BarChartComponent implements OnInit {
         colors: ['#fff'],
       },
       xaxis: {
-        categories: [
-          '2011',
-          '2012',
-          '2013',
-        ],
+        categories: ["X-Quang", "CT"],
         labels: {
           formatter: function (val) {
             return val;
@@ -110,19 +106,15 @@ export class BarChartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dashboardService.getDomesticStats().subscribe((res) => {
+    this.dashboardService.getProfit().subscribe((res) => {
       this.chartOptions.series = [
         {
-          name: 'Hiện tại',
-          data: res['hientai'].map((x) => x.value),
+          name: 'Ngân sách',
+          data: res['ngansach'].map((x) => x.value),
         },
         {
-          name: 'Nhập khoa',
-          data: res['nhapkhoa'].map((x) => x.value),
-        },
-        {
-          name: 'Xuất khoa',
-          data: res['xuatkhoa'].map((x) => x.value),
+          name: 'Xã hội hóa',
+          data: res['xahoihoa'].map((x) => x.value),
         },
       ];
     });

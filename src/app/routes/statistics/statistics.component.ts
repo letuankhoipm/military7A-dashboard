@@ -19,6 +19,15 @@ export class StatisticsComponent implements OnInit {
   examsResultLabel;
   examsResultData;
 
+  data1;
+  label1;
+
+  data2;
+  label2;
+
+  data3;
+  label3;
+
   listLabels2 = [
     'Nhập viện',
     'Kê toa cho về',
@@ -30,6 +39,7 @@ export class StatisticsComponent implements OnInit {
   ngOnInit(): void {
     this.getExamsTurn();
     this.getExamsResult();
+    this.getCanLamSang();
   }
 
   getExamsTurn() {
@@ -43,6 +53,20 @@ export class StatisticsComponent implements OnInit {
     this.dashboardService.getExamResult().subscribe((res) => {
       this.examsResultLabel = res.map(x => x.key);
       this.examsResultData = res.map(x => x.value);
+    })
+  }
+
+  getCanLamSang() {
+    this.dashboardService.getClinicalStats().subscribe((res) => {
+      const data1 = res['xahoihoa'];
+      this.data1 = data1.map(x => x.value);
+      this.label1 = data1.map(x => x.name);
+      const data2 = res['ngansach'];
+      this.data2 = data2.map(x => x.value);
+      this.label2 = data2.map(x => x.name);
+      const data3 = res['tong'];
+      this.data3 = data3.map(x => x.value);
+      this.label3 = data3.map(x => x.name);
     })
   }
 }

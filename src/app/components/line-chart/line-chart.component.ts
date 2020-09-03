@@ -41,13 +41,17 @@ export class LineChartComponent implements OnInit {
     this.chartOptions = {
       series: [
         {
-          name: "High - 2013",
+          name: "Hiện tại",
           data: [28, 29, 33, 36, 32, 32, 33]
         },
         {
-          name: "Low - 2013",
+          name: "Xuất khoa",
           data: [12, 11, 14, 18, 17, 13, 13]
-        }
+        },
+        {
+          name: "Nhập khoa",
+          data: [12, 11, 14, 18, 17, 13, 13]
+        },
       ],
       chart: {
         height: 350,
@@ -83,11 +87,10 @@ export class LineChartComponent implements OnInit {
         radius: 12
       },
       xaxis: {
-        categories: ["X-Quang", "CT"],
+        categories: ['2011', '2012', '2013'],
       },
       yaxis: {
-        min: 5,
-        max: 40
+
       },
       legend: {
         position: "top",
@@ -100,15 +103,19 @@ export class LineChartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dashboardService.getProfit().subscribe((res) => {
+    this.dashboardService.getDomesticStats().subscribe((res) => {
       this.chartOptions.series = [
         {
-          name: 'Ngân sách',
-          data: res['ngansach'].map((x) => x.value),
+          name: 'Hiện tại',
+          data: res['hientai'].map((x) => x.value),
         },
         {
-          name: 'Xã hội hóa',
-          data: res['xahoihoa'].map((x) => x.value),
+          name: 'Nhập khoa',
+          data: res['nhapkhoa'].map((x) => x.value),
+        },
+        {
+          name: 'Xuất khoa',
+          data: res['xuatkhoa'].map((x) => x.value),
         },
       ];
     });
